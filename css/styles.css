@@ -23,6 +23,10 @@
     color: var(--darkBlue);
 }
 
+body {
+    overflow-x: hidden;
+}
+
 nav {
     width: 100%;
     height: 100px;
@@ -85,7 +89,18 @@ nav .login a {
 #hero .swiper-wrapper .swiper-slide {
     background-position: top;
     background-size: cover;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+	background-repeat: no-repeat;
     flex-direction: column;
     align-items: center;
     justify-content: center ;
@@ -108,12 +123,12 @@ nav .login a {
 #hero .swiper-wrapper .swiper-slide .heroButton {
     width: 300px;
     height: 60px;
-    bottom: 100px;
     position: absolute;
     bottom: 60px;
     font-size: 24px;
     background-color: transparent;
     border: 2px solid var(--white);
+    border-radius: 50px;
     color: var(--white);
     overflow: hidden;
 }
@@ -133,6 +148,7 @@ nav .login a {
     transform: translateX(-100%);
     transition: transform 0.4s ease-out;
     z-index: -1;
+    border-radius: 50px;
 }
 
 #hero .swiper-wrapper .swiper-slide .heroButton:hover::before {
@@ -141,9 +157,21 @@ nav .login a {
 
 #trends {
     width: 100%;
-    height: 800px;
     background-color: var(--white);
     padding: 32px 72px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#trends .sectionHead {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 16px;
 }
 
 #trends .sectionHead h3 {
@@ -160,4 +188,242 @@ nav .login a {
     height: 200px;
     width: 200px;
     background-color: #c5832b;
+}
+
+.trendWrapper {
+    width: 1680px;
+    height: 580px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.trendsNavArrow {
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    display: flex;;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 2;
+    font-size: 32px;
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+    top: 25%;
+}
+
+
+.leftArrow {
+    left: 40px;
+}
+
+.rightArrow {
+    right: 40px;
+}
+
+.trendWrapper .trendCard {
+    height: 100%;
+    width: 400px;
+    margin: 0 8px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.trendWrapper .trendCard img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 20px;
+    object-position: top;
+    margin: 0 0 16px 0;
+}
+
+.productDescription {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.productDescription .productName {
+    font-size: 20px;
+    font-family: var(--gilroyBold);
+}
+
+.productDescription .productBrand {
+    margin-right: 16px;
+    font-size: 16px;
+}
+
+.trendWrapper .trendCard .productCost {
+    position: absolute;
+    bottom: 16px;
+    font-family: var(--gilroyMedium);
+    font-weight: 800;
+    font-size: 18px;
+    color: #c5832b;
+}
+
+.productImg {
+    position: relative;
+}
+
+.productImg .colorCode {
+    position: absolute;
+    bottom: 40px;
+    right: 16px;
+    height: 32px;
+    max-width: 160px;
+    padding: 16px;
+    background-color: var(--white);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.colorCode .color {
+    height: 16px;
+    width: 16px;
+    background-color: #0d1321;
+    margin-right: 8px;
+    border-radius: 5px;
+}
+
+.shopNow {
+    width: 240px;
+    height: 58px;
+    color: var(--white);
+    overflow: hidden;
+    font-size: 16px;
+    background-color: var(--darkBlue);
+    color: var(--white);
+    margin: 32px;
+    border-radius: 50px;
+}
+
+.pageSeparator {
+    height: 1px;
+    width: 90%;
+    background-color: var(--darkBlue);
+}
+
+#adverts {
+    width: 100%;
+    height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 32px 0;
+}
+
+#adverts .newReleaseAd {
+    height: 100%;
+    width: 40%;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 0 16px;
+    border-radius: 20px;
+    background-image: linear-gradient(to top, rgba(13, 19, 33, 0.9) 10%, rgba(13, 19, 33, 0) 40%), url("../images/crop-top-white.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+#adverts .newReleaseAd .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 16px;
+}
+
+#adverts .newReleaseAd .text h3,
+#adverts .newReleaseAd .text p {
+    color: var(--white);
+}
+
+#adverts .newReleaseAd .text h3,
+#adverts .adTwo .trendyFashionAd .innerDiv .text h3{
+    font-size: 32px;
+    font-family: var(--gilroyBold);
+}
+
+#adverts .newReleaseAd .links {
+    display: flex;
+}
+
+#adverts .newReleaseAd .links .lookBook,
+#adverts .newReleaseAd .links .trending,
+#adverts .adTwo .trendyFashionAd .innerDiv .trending {
+    height: 48px;
+    margin: 0 8px;
+    border-radius: 50px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: pre;
+    max-width: 200px;
+}
+
+.lookBook {
+    background-color: var(--darkBlue);
+    color: var(--white);
+}
+
+.trending {
+    background-color: transparent;
+    border: 2px solid var(--white);
+    color: var(--white);
+}
+
+#adverts .adTwo {
+    height: 100%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 16px;
+}
+
+#adverts .adTwo .trendyFashionAd,
+#adverts .adTwo .subscribeAd {
+    width: 100%;
+    height: 50%;
+    background-color: #c5832b;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    border-radius: 20px;
+}
+
+#adverts .adTwo .trendyFashionAd .innerDiv {
+    height: 100%;
+    width: 100%;
+    padding: 8px;
+    border: 2px solid var(--white);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#adverts .adTwo .trendyFashionAd {
+    margin-bottom: 16px;
+    background-image: url("../images/black-girl-shades.jpg");
+    background-position: center;
+    background-size: cover;
+    background-position: 0 -100px;
+}
+
+#adverts .adTwo .subscribeAd {
+    margin-top: 16px;
 }

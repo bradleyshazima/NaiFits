@@ -1,40 +1,97 @@
-const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'horizontal',
+var mySwiper = new Swiper ('.swiper-container', 
+	{
+    speed:1000,
+		direction: 'horizontal',
+		pagination: 
+		{
+			el: '.swiper-pagination',
+			dynamicBullets: true,
+		},
+		zoom: true,
+		keyboard: 
+		{
+			enabled: true,
+			onlyInViewport: false,
+		},
+    autoplay: 
+    {
+      delay: 4000,
+    },
     loop: true,
-  
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-    },
-
-    autoplay: true,
-    autoplayTimeout: 1000,
-  
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
-  });
+	}); 
 
 
-//   ----------------------------------------------------------- OWL CAROUSEL INITIALIZATION ------------------------------------------------------
-  
 
-$('.loop').owlCarousel({
-    center: true,
-    items:2,
-    loop:true,
-    margin:10,
-    responsive:{
-        600:{
-            items:4
+
+
+
+    var isAnimating = false;
+
+    function scrollLeftAnimate(elem, unit) {
+
+        if (!elem || isAnimating) {
+            //if element not found / if animating, do not execute slide
+            return;
         }
+
+        var time = 300; // animation duration in MS, the smaller the faster.
+        var from = elem.scrollLeft; // to continue the frame posistion
+        var aframe =
+            10; //fraction of frame frequency , set 1 for smoothest  ~ set 10++ for lower FPS (reduce CPU usage)
+        isAnimating = true; //if animating prevent double trigger animation
+
+        var start = new Date().getTime(),
+            timer = setInterval(function () {
+                var step = Math.min(1, (new Date().getTime() - start) / time);
+                elem.scrollLeft = ((step * unit) + from);
+                if (step === 1) {
+                    clearInterval(timer);
+                    isAnimating = false;
+                }
+            }, aframe);
     }
-});
+
+    function initDealCarrousel(dealCarrouselID) {
+        var target = document.querySelector("#" + dealCarrouselID + " .trendWrapper");
+        var cardOutterWidth;
+        var maxCarrouselScroll;
+
+        function updateUpaCarrouselInfo() {
+            cardOutterWidth = document.querySelector("#" + dealCarrouselID + " .trendCard").offsetWidth; //you can define how far the scroll
+            maxCarrouselScroll = (document.querySelectorAll("#" + dealCarrouselID + " .trendCard").length *
+                    cardOutterWidth) - document.querySelector("#" + dealCarrouselID + " .trendWrapper")
+                .clientWidth;
+        }
+
+        document.querySelector("#" + dealCarrouselID + " .leftArrow").addEventListener("click",
+            function () {
+                updateUpaCarrouselInfo(); //in case window resized, will get new info
+                if (target.scrollLeft > 0) {
+                    scrollLeftAnimate(target, -cardOutterWidth * 2);
+                }
+            }
+        );
+
+        document.querySelector("#" + dealCarrouselID + " .rightArrow").addEventListener("click",
+            function () {
+                updateUpaCarrouselInfo(); //in case window resized, will get new info 
+                if (target.scrollLeft < maxCarrouselScroll) {
+                    scrollLeftAnimate(target, cardOutterWidth * 2);
+                }
+            }
+        );
+    }
+    // Initiate the container with ID
+    initDealCarrousel('trends'); //carrousel ID
+
+
+
+
+
+
+
+
+
+
+
+
