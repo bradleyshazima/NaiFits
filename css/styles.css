@@ -1,3 +1,5 @@
+/* -------------------------------------------------------------- ROOT VARIABLES -------------------------------------------------------------- */
+
 :root {
     --gilroyBold: 'Gilroy-Bold', sans-serif;
     --gilroyHeavy: 'Gilroy-Heavy', sans-serif;
@@ -13,6 +15,9 @@
                                                 
 }
 
+/* -------------------------------------------------------------- UNIVERSAL STYLES -------------------------------------------------------------- */
+
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -23,9 +28,14 @@
     color: var(--darkBlue);
 }
 
+/* -------------------------------------------------------------- BODY -------------------------------------------------------------- */
+
+
 body {
     overflow-x: hidden;
 }
+
+/* -------------------------------------------------------------- NAVBAR -------------------------------------------------------------- */
 
 nav {
     width: 100%;
@@ -52,6 +62,13 @@ nav .navLinks .links {
     color: var(--white);
     text-decoration: none;
     margin: 0 8px;
+    padding: 8px;
+}
+
+nav .navLinks .links.active {
+    color: var(--orange);
+    font-family: var(--gilroyBold);
+    border-bottom: 2px solid var(--orange);
 }
 
 nav .navIcons {
@@ -79,6 +96,8 @@ nav .login a {
     font-family: var(--gilroyMedium);
     font-size: 20px;
 }
+
+/* -------------------------------------------------------------- HERO SECTION -------------------------------------------------------------- */
 
 #hero {
     width: 100%;
@@ -127,7 +146,7 @@ nav .login a {
     bottom: 60px;
     font-size: 24px;
     background-color: transparent;
-    border: 2px solid var(--white);
+    border: 1px solid var(--white);
     border-radius: 50px;
     color: var(--white);
     overflow: hidden;
@@ -154,6 +173,8 @@ nav .login a {
 #hero .swiper-wrapper .swiper-slide .heroButton:hover::before {
     transform: translateX(0);
 }
+
+/* -------------------------------------------------------------- TRENDS SECTION -------------------------------------------------------------- */
 
 #trends {
     width: 100%;
@@ -310,22 +331,32 @@ nav .login a {
 
 .pageSeparator {
     height: 1px;
-    width: 90%;
+    width: 1540px;
     background-color: var(--darkBlue);
 }
 
+/* -------------------------------------------------------------- ADVERTS SECTION -------------------------------------------------------------- */
+
 #adverts {
     width: 100%;
-    height: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 64px 0;
+}
+
+.topAdSect {
+    width: 100%;
+    height: 580px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 32px 0;
 }
 
-#adverts .newReleaseAd {
+.newReleaseAd {
     height: 100%;
-    width: 40%;
+    width: 680px;
     padding: 32px;
     display: flex;
     flex-direction: column;
@@ -337,7 +368,7 @@ nav .login a {
     background-size: cover;
 }
 
-#adverts .newReleaseAd .text {
+.newReleaseAd .text {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -345,24 +376,26 @@ nav .login a {
     margin-bottom: 16px;
 }
 
-#adverts .newReleaseAd .text h3,
-#adverts .newReleaseAd .text p {
+.newReleaseAd .text h3,
+.newReleaseAd .text p,
+.adTwo .text h3,
+.adTwo .text p {
     color: var(--white);
 }
 
-#adverts .newReleaseAd .text h3,
-#adverts .adTwo .trendyFashionAd .innerDiv .text h3{
+.newReleaseAd .text h3,
+.adTwo .trendyFashionAd .innerDiv .text h3{
     font-size: 32px;
     font-family: var(--gilroyBold);
 }
 
-#adverts .newReleaseAd .links {
+.newReleaseAd .links {
     display: flex;
 }
 
-#adverts .newReleaseAd .links .lookBook,
-#adverts .newReleaseAd .links .trending,
-#adverts .adTwo .trendyFashionAd .innerDiv .trending {
+.newReleaseAd .links .lookBook,
+.newReleaseAd .links .trending,
+.adTwo .trendyFashionAd .innerDiv .trending {
     height: 48px;
     margin: 0 8px;
     border-radius: 50px;
@@ -381,23 +414,22 @@ nav .login a {
 
 .trending {
     background-color: transparent;
-    border: 2px solid var(--white);
+    border: 1px solid var(--white);
     color: var(--white);
 }
 
-#adverts .adTwo {
+.adTwo {
     height: 100%;
-    width: 40%;
+    width: 680px;
     display: flex;
     flex-direction: column;
     margin: 0 16px;
 }
 
-#adverts .adTwo .trendyFashionAd,
-#adverts .adTwo .subscribeAd {
+.adTwo .trendyFashionAd,
+.adTwo .subscribeAd {
     width: 100%;
     height: 50%;
-    background-color: #c5832b;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -405,18 +437,18 @@ nav .login a {
     border-radius: 20px;
 }
 
-#adverts .adTwo .trendyFashionAd .innerDiv {
+.adTwo .trendyFashionAd .innerDiv {
     height: 100%;
     width: 100%;
-    padding: 8px;
-    border: 2px solid var(--white);
+    padding: 16px;
+    border: 1px solid var(--white);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-#adverts .adTwo .trendyFashionAd {
+.adTwo .trendyFashionAd {
     margin-bottom: 16px;
     background-image: url("../images/black-girl-shades.jpg");
     background-position: center;
@@ -424,6 +456,94 @@ nav .login a {
     background-position: 0 -100px;
 }
 
-#adverts .adTwo .subscribeAd {
+.adTwo .subscribeAd {
     margin-top: 16px;
+    background-color: var(--orange);
+}
+
+.subscribeAd .subButton {
+    height: 48px;
+    margin: 8px;
+    border-radius: 50px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: pre;
+    max-width: 200px;
+}
+
+.subscribeAd p {
+    color: var(--white);
+}
+
+.bottomAdSect {
+    height: 480px;
+    width: 1392px;
+    border-radius: 20px;
+    margin-top: 32px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #c5832b;
+    background-image: linear-gradient(to top, rgba(13, 19, 33, 0.9) 10%, rgba(13, 19, 33, 0) 40%), url("../images/three-models.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.bottomAdSect .longBtn {
+    width: 480px;
+    height: 58px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    background: transparent;
+    border: 1px solid var(--white);
+    color: var(--white);
+    transition: all 0.3s ease-out;
+    font-family: var(--gilroyBold);
+}
+
+.bottomAdSect .longBtn:hover {
+    background: var(--white);
+    color: var(--darkBlue);
+    transition: all 0.3s ease-in;
+}
+
+
+/* -------------------------------------------------------------- QUOTES SECTION -------------------------------------------------------------- */
+
+
+.fashionQuote {
+    width: 1392px;
+    height: 240px;
+    background-color: var(--darkBlue);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: var(--white);
+    padding: 64px;
+}
+
+.fashionQuote .quote,
+.fashionQuote .originator {
+    color: var(--white);
+}
+
+.fashionQuote .quote {
+    font-family: var(--gilroyBold);
+    font-weight: 800;
+    font-size: 32px;
+}
+
+.fashionQuote .originator {
+    align-self: flex-end;
+    font-size: 20px;
 }
