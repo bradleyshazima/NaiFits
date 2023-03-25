@@ -9,6 +9,7 @@
     --karmella: 'Karmella', sans-serif;
     --mergian: 'Mergian Regular', sans-serif;
     --white: #eff1f3;
+    --lightWhite: #eff1f380;
     --darkBlue: #0d1321;
     --yellow: #ffeb33;
     --orange: #c5832b;
@@ -26,6 +27,7 @@
     font-family: var(--gilroyMedium);
     font-size: 1rem;
     color: var(--darkBlue);
+    user-select: none;
 }
 
 /* -------------------------------------------------------------- BODY -------------------------------------------------------------- */
@@ -33,6 +35,22 @@
 
 body {
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+ul {
+    list-style: none;
 }
 
 /* -------------------------------------------------------------- NAVBAR -------------------------------------------------------------- */
@@ -54,13 +72,11 @@ nav .logo {
 }
 
 nav .navLinks {
-    list-style: none;
     display: flex;
 }
 
 nav .navLinks .links {
     color: var(--white);
-    text-decoration: none;
     margin: 0 8px;
     padding: 8px;
 }
@@ -76,21 +92,18 @@ nav .navIcons {
 }
 
 nav .navIcons li {
-    list-style: none;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 nav .navIcons li i, nav .navIcons a{
-    text-decoration: none;;
     color: var(--white);
     font-size: 1.5rem;
     margin: 8px;
 }
 
 nav .login a {
-    text-decoration: none;
     color: var(--white);
     font-size: 16px;
     font-family: var(--gilroyMedium);
@@ -104,6 +117,7 @@ nav .login a {
     height: calc(100vh - 100px);
     background-color: var(--white);
 }
+
 
 #hero .swiper-wrapper .swiper-slide {
     background-position: top;
@@ -235,7 +249,7 @@ nav .login a {
     font-size: 32px;
     background-color: transparent;
     transition: all 0.3s ease-in-out;
-    top: 25%;
+    top: 50%;
 }
 
 
@@ -405,6 +419,16 @@ nav .login a {
     justify-content: center;
     white-space: pre;
     max-width: 200px;
+    transition: all 0.3s ease-out;
+}
+
+.newReleaseAd .links .lookBook:hover,
+.newReleaseAd .links .trending:hover,
+.adTwo .trendyFashionAd .innerDiv .trending:hover,
+.subscribeAd .subButton:hover {
+    background-color: var(--white);
+    color: var(--darkBlue);
+    transition: all 0.3s ease-in;
 }
 
 .lookBook {
@@ -459,6 +483,9 @@ nav .login a {
 .adTwo .subscribeAd {
     margin-top: 16px;
     background-color: var(--orange);
+    background-image: url("../images/abstract-big.svg");
+    background-size: cover;
+    background-position: top;
 }
 
 .subscribeAd .subButton {
@@ -471,6 +498,10 @@ nav .login a {
     justify-content: center;
     white-space: pre;
     max-width: 200px;
+    background-color: transparent;
+    border: 1px solid var(--white);
+    color: var(--white);
+    transition: all 0.3s ease-out;
 }
 
 .subscribeAd p {
@@ -547,3 +578,166 @@ nav .login a {
     align-self: flex-end;
     font-size: 20px;
 }
+
+
+/* -------------------------------------------------------------- FOOTER SECTION -------------------------------------------------------------- */
+
+footer {
+    width: 100%;
+    height: 560px;
+    background-color: var(--darkBlue);
+    background-image: url("../images/abstract-lines.svg");
+    background-position: center;
+    background-size: cover;
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .footerTop {
+    width: 100%;
+    height: 480px;
+    border-bottom: 1px solid var(--lightWhite);
+    display: flex;
+
+}
+
+.footerLinks {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    padding: 80px 64px 16px 64px;
+    justify-content: space-between;
+    border-right: 1px solid var(--lightWhite);
+}
+
+.footerLinks .navLinks {
+    display: flex;
+}
+
+.footerLinks .navLinks span {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footerLinks .navLinks span .header {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.footerLinks .navLinks span ul li{
+    margin: 16px 0;
+}
+
+.footerLinks .navLinks span ul li a {
+    font-size: 18px;
+}
+
+.footerLinks .navLinks span ul li a:hover {
+    color: var(--orange);
+    transition: all 0.2s ease-in;
+}
+
+.footerLinks .socialLinks {
+    display: flex;
+    align-items: center;
+}
+
+.footerLinks .socialLinks i {
+    font-size: 24px;
+    margin-right: 48px;
+}
+
+.footerTop .newsLetter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 50%;
+    padding: 64px;
+}
+
+.footerTop .newsLetter .header {
+    font-size: 96px;
+    color: var(--white);
+}
+
+.footerTop .newsLetter p {
+    color: var(--white);
+    width: 480px;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.footerTop .newsLetter p span {
+    color: var(--white);
+    font-family: var(--gilroyBold);
+}
+
+.footerTop .newsLetter form {
+    margin-top: 32px;
+    width: 560px;
+    height: 64px;
+    border-radius: 60px;
+    /* overflow: hidden; */
+    display: flex;
+    position: relative;
+    border: 1px solid var(--white);
+}
+
+.footerTop .newsLetter form input {
+    height: 100%;
+    width: 480px;
+    padding: 0 32px;
+    font-size: 20px;
+    font-family: var(--gilroyBold);
+    background-color: transparent;
+    color: var(--white);
+}
+
+.footerTop .newsLetter form button {
+    height: 64px;
+    width: 160px;
+    border-radius: 60px;
+    background-color: var(--white);
+    position: absolute;
+    right: -1px;
+    top: -1px;
+    z-index: 99;
+}
+
+.footerLinks .navLinks span .header,
+.footerLinks .navLinks span ul li a,
+.footerLinks .socialLinks i {
+    color: var(--white);
+    transition: all 0.2s ease-out;
+}
+
+footer .footerBottom {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 64px;
+}
+
+footer .footerBottom .copyright,
+footer .footerBottom .links ul li a {
+    color: var(--white);
+}
+
+footer .footerBottom .links ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 320px;
+}
+
+
+
