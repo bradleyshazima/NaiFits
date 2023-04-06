@@ -1,0 +1,740 @@
+/* -------------------------------------------------------------- ROOT VARIABLES -------------------------------------------------------------- */
+
+:root {
+    --gilroyBold: 'Gilroy-Bold', sans-serif;
+    --gilroyHeavy: 'Gilroy-Heavy', sans-serif;
+    --gilroyLight: 'gilroy-Light', sans-serif;
+    --gilroyRegular: 'gilroy-Regular', sans-serif;
+    --gilroyMedium: 'gilroy-Medium', sans-serif;
+    --karmella: 'Karmella', sans-serif;
+    --mergian: 'Mergian Regular', sans-serif;
+    --white: #eff1f3;
+    --lightWhite: #eff1f380;
+    --darkBlue: #0d1321;
+    --lightBlue: rgba(13, 19, 33, 0.6);
+    --yellow: #ffeb33;
+    --orange: #c5832b;
+                                                
+}
+
+/* -------------------------------------------------------------- UNIVERSAL STYLES -------------------------------------------------------------- */
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family: var(--gilroyMedium);
+    font-size: 1rem;
+    color: var(--darkBlue);
+    user-select: none;
+}
+
+/* -------------------------------------------------------------- BODY -------------------------------------------------------------- */
+
+
+body {
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+ul {
+    list-style: none;
+}
+
+/* -------------------------------------------------------------- NAVBAR -------------------------------------------------------------- */
+
+nav {
+    width: 100%;
+    height: 5rem;
+    background-color: var(--darkBlue);
+    padding: 0 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .logo {
+    color: var(--white);
+    font-family: var(--karmella);
+    font-size: 2.5rem;
+}
+
+nav .navLinks {
+    display: flex;
+}
+
+nav .navLinks .links {
+    color: var(--white);
+    margin: 0 0.5rem;
+    padding: 0.5rem;
+}
+
+nav .navLinks .links.active {
+    color: var(--orange);
+    font-family: var(--gilroyBold);
+    border-bottom: .125rem solid var(--orange);
+}
+
+nav .navIcons {
+    display: flex;
+}
+
+nav .navIcons li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .navIcons li i, nav .navIcons a{
+    color: var(--white);
+    font-size: 1rem;
+    margin: 8px;
+}
+
+
+/* -------------------------------------------------------------- HERO SECTION -------------------------------------------------------------- */
+
+#hero {
+    width: 100%;
+    height: calc(100vh - 5rem);
+    background-color: var(--white);
+}
+
+
+#hero .swiper-wrapper .swiper-slide {
+    background-position: top;
+    background-size: cover;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+	background-repeat: no-repeat;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center ;
+    width: 100%;
+    height: 100%;
+}
+
+#hero .swiper-wrapper .swiper-slide h4 {
+    font-size: 8rem;
+    font-family: var(--karmella);
+    color: var(--yellow);
+    font-weight: 100;
+}
+
+#hero .swiper-wrapper .swiper-slide .describe p {
+    font-size: 2rem;
+    color: var(--white);
+    font-family: var(--mergian);
+}
+
+#hero .swiper-wrapper .swiper-slide .heroButton {
+    width: 16rem;
+    height: 3rem;
+    position: absolute;
+    bottom: 4rem;
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: 1px solid var(--white);
+    border-radius: 50px;
+    color: var(--white);
+    overflow: hidden;
+}
+
+#hero .swiper-wrapper .swiper-slide .heroButton:hover {
+    color: var(--darkBlue);
+}
+
+#hero .swiper-wrapper .swiper-slide .heroButton::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-out;
+    z-index: -1;
+    border-radius: 50px;
+}
+
+#hero .swiper-wrapper .swiper-slide .heroButton:hover::before {
+    transform: translateX(0);
+}
+
+/* -------------------------------------------------------------- TRENDS SECTION -------------------------------------------------------------- */
+
+#trends {
+    width: 100%;
+    background-color: var(--white);
+    padding: 2rem 5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#trends .sectionHead {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+#trends .sectionHead h3 {
+    font-size: 2.5rem;
+    font-family: var(--gilroyBold);
+}
+
+#trends .sectionHead p {
+    font-size: 1.2rem;
+    font-family: var(--gilroyMedium);
+}
+
+.trendWrapper {
+    width: 100%;
+    height: 35rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 0.5rem;
+}
+
+.trendWrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.trendsNavArrow {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 2;
+    font-size: 2rem;
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+    top: 50%;
+}
+
+
+.leftArrow {
+    left: 2rem;
+}
+
+.rightArrow {
+    right: 2rem;
+}
+
+.trendWrapper .trendCard {
+    height: 30rem;
+    width: 20rem;
+    margin: 0 .5rem;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* background-color: #c5832b; */
+    border-radius: 30px;
+    border: 1.5px solid var(--lightBlue);
+}
+
+.trendWrapper .trendCard img {
+    width: 100%;
+    height: 23rem;
+    object-fit: cover;
+    border-radius: 20px;
+    object-position: top;
+    margin-bottom: .5rem;
+}
+
+.productDescription {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+}
+
+.productDescription .productName {
+    font-size: 20px;
+    font-family: var(--gilroyBold);
+}
+
+.productDescription .productBrand {
+    margin-right: 16px;
+    font-size: 16px;
+}
+
+.trendWrapper .trendCard .productCost {
+    font-family: var(--gilroyMedium);
+    font-weight: 800;
+    font-size: 18px;
+    color: #c5832b;
+}
+
+.productImg {
+    position: relative;
+}
+
+.productImg .colorCode {
+    position: absolute;
+    bottom: 40px;
+    right: 16px;
+    height: 32px;
+    max-width: 160px;
+    padding: 16px;
+    background-color: var(--white);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.colorCode .color {
+    height: 1rem;
+    width: 1rem;
+    background-color: #0d1321;
+    margin-right: .5rem;
+    border-radius: 5px;
+}
+
+.shopNow {
+    width: 240px;
+    height: 58px;
+    color: var(--white);
+    overflow: hidden;
+    font-size: 1rem;
+    background-color: var(--darkBlue);
+    color: var(--white);
+    margin: 2rem;
+    border-radius: 50px;
+}
+
+.pageSeparator {
+    height: 1px;
+    width: 1540px;
+    background-color: var(--darkBlue);
+}
+
+/* -------------------------------------------------------------- ADVERTS SECTION -------------------------------------------------------------- */
+
+#adverts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 64px 0;
+}
+
+.topAdSect {
+    width: 100%;
+    height: 580px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.newReleaseAd {
+    height: 100%;
+    width: 680px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 0 16px;
+    border-radius: 20px;
+    background-image: linear-gradient(to top, rgba(13, 19, 33, 0.9) 10%, rgba(13, 19, 33, 0) 40%), url("../images/crop-top-white.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.newReleaseAd .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 16px;
+}
+
+.newReleaseAd .text h3,
+.newReleaseAd .text p,
+.adTwo .text h3,
+.adTwo .text p {
+    color: var(--white);
+}
+
+.newReleaseAd .text h3,
+.adTwo .trendyFashionAd .innerDiv .text h3{
+    font-size: 32px;
+    font-family: var(--gilroyBold);
+}
+
+.newReleaseAd .links {
+    display: flex;
+}
+
+.newReleaseAd .links .lookBook,
+.newReleaseAd .links .trending,
+.adTwo .trendyFashionAd .innerDiv .trending {
+    height: 48px;
+    margin: 0 8px;
+    border-radius: 50px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: pre;
+    max-width: 200px;
+    transition: all 0.3s ease-out;
+}
+
+.newReleaseAd .links .lookBook:hover,
+.newReleaseAd .links .trending:hover,
+.adTwo .trendyFashionAd .innerDiv .trending:hover,
+.subscribeAd .subButton:hover {
+    background-color: var(--white);
+    color: var(--darkBlue);
+    transition: all 0.3s ease-in;
+}
+
+.lookBook {
+    background-color: var(--darkBlue);
+    color: var(--white);
+}
+
+.trending {
+    background-color: transparent;
+    border: 1px solid var(--white);
+    color: var(--white);
+}
+
+.adTwo {
+    height: 100%;
+    width: 680px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 16px;
+}
+
+.adTwo .trendyFashionAd,
+.adTwo .subscribeAd {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    border-radius: 20px;
+}
+
+.adTwo .trendyFashionAd .innerDiv {
+    height: 100%;
+    width: 100%;
+    padding: 16px;
+    border: 1px solid var(--white);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.adTwo .trendyFashionAd {
+    margin-bottom: 16px;
+    background-image: url("../images/black-girl-shades.jpg");
+    background-position: center;
+    background-size: cover;
+    background-position: 0 -100px;
+}
+
+.adTwo .subscribeAd {
+    margin-top: 16px;
+    background-color: var(--orange);
+    background-image: url("../images/abstract-big.svg");
+    background-size: cover;
+    background-position: top;
+}
+
+.subscribeAd .subButton {
+    height: 48px;
+    margin: 8px;
+    border-radius: 50px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: pre;
+    max-width: 200px;
+    background-color: transparent;
+    border: 1px solid var(--white);
+    color: var(--white);
+    transition: all 0.3s ease-out;
+}
+
+.subscribeAd p {
+    color: var(--white);
+}
+
+.bottomAdSect {
+    height: 480px;
+    width: 1392px;
+    border-radius: 20px;
+    margin-top: 32px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #c5832b;
+    background-image: linear-gradient(to top, rgba(13, 19, 33, 0.9) 10%, rgba(13, 19, 33, 0) 40%), url("../images/three-models.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.bottomAdSect .longBtn {
+    width: 480px;
+    height: 58px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    background: transparent;
+    border: 1px solid var(--white);
+    color: var(--white);
+    transition: all 0.3s ease-out;
+    font-family: var(--gilroyBold);
+}
+
+.bottomAdSect .longBtn:hover {
+    background: var(--white);
+    color: var(--darkBlue);
+    transition: all 0.3s ease-in;
+}
+
+
+/* -------------------------------------------------------------- QUOTES SECTION -------------------------------------------------------------- */
+
+
+.fashionQuote {
+    width: 1392px;
+    height: 240px;
+    background-color: var(--darkBlue);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: var(--white);
+    padding: 64px;
+}
+
+.fashionQuote .quote,
+.fashionQuote .originator {
+    color: var(--white);
+}
+
+.fashionQuote .quote {
+    font-family: var(--gilroyBold);
+    font-weight: 800;
+    font-size: 32px;
+}
+
+.fashionQuote .originator {
+    align-self: flex-end;
+    font-size: 20px;
+}
+
+
+/* -------------------------------------------------------------- FOOTER SECTION -------------------------------------------------------------- */
+
+footer {
+    width: 100%;
+    height: 560px;
+    background-color: var(--darkBlue);
+    background-image: url("../images/abstract-lines.svg");
+    background-position: center;
+    background-size: cover;
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .footerTop {
+    width: 100%;
+    height: 480px;
+    border-bottom: 1px solid var(--lightWhite);
+    display: flex;
+
+}
+
+.footerLinks {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    padding: 80px 64px 16px 64px;
+    justify-content: space-between;
+    border-right: 1px solid var(--lightWhite);
+}
+
+.footerLinks .navLinks {
+    display: flex;
+}
+
+.footerLinks .navLinks span {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footerLinks .navLinks span .header {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.footerLinks .navLinks span ul li{
+    margin: 16px 0;
+}
+
+.footerLinks .navLinks span ul li a {
+    font-size: 18px;
+}
+
+.footerLinks .navLinks span ul li a:hover {
+    color: var(--orange);
+    transition: all 0.2s ease-in;
+}
+
+.footerLinks .socialLinks {
+    display: flex;
+    align-items: center;
+}
+
+.footerLinks .socialLinks i {
+    font-size: 24px;
+    margin-right: 48px;
+}
+
+.footerTop .newsLetter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 50%;
+    padding: 64px;
+}
+
+.footerTop .newsLetter .header {
+    font-size: 96px;
+    color: var(--white);
+}
+
+.footerTop .newsLetter p {
+    color: var(--white);
+    width: 480px;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.footerTop .newsLetter p span {
+    color: var(--white);
+    font-family: var(--gilroyBold);
+}
+
+.footerTop .newsLetter form {
+    margin-top: 32px;
+    width: 560px;
+    height: 64px;
+    border-radius: 60px;
+    /* overflow: hidden; */
+    display: flex;
+    position: relative;
+    border: 1px solid var(--white);
+}
+
+.footerTop .newsLetter form input {
+    height: 100%;
+    width: 480px;
+    padding: 0 32px;
+    font-size: 20px;
+    font-family: var(--gilroyBold);
+    background-color: transparent;
+    color: var(--white);
+}
+
+.footerTop .newsLetter form button {
+    height: 64px;
+    width: 160px;
+    border-radius: 60px;
+    background-color: var(--white);
+    position: absolute;
+    right: -1px;
+    top: -1px;
+    z-index: 99;
+}
+
+.footerLinks .navLinks span .header,
+.footerLinks .navLinks span ul li a,
+.footerLinks .socialLinks i {
+    color: var(--white);
+    transition: all 0.2s ease-out;
+}
+
+footer .footerBottom {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 64px;
+}
+
+footer .footerBottom .copyright,
+footer .footerBottom .links ul li a {
+    color: var(--white);
+}
+
+footer .footerBottom .links ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 320px;
+}
+
+
+
