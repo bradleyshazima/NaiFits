@@ -1,0 +1,128 @@
+@import url('https://fonts.cdnfonts.com/css/karmella');
+@import url('https://fonts.cdnfonts.com/css/gilroy-bold');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --gilB: 'Gilroy-Bold', sans-serif;
+  --gilH: 'Gilroy-Heavy', sans-serif;
+  --gilLight: 'gilroy-Light', sans-serif;
+  --gilR: 'gilroy-Regular', sans-serif;
+  --gilM: 'gilroy-Medium', sans-serif;
+  --karmella: 'Karmella', sans-serif;
+  --mergian: 'Mergian Regular', sans-serif;
+  --white: #eff1f3;
+  --primary: #eff1f380;
+  --darkBlue: #0d1321;
+  --lightBlue: #0d132199;
+  --yellow: #ffeb33;
+  --orange: #c5832b;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-family: var(--gilM);
+  font-size: 1rem;
+  user-select: none;
+}
+
+.text-orange {
+  color: var(--orange);
+}
+
+.text-dark {
+  color: var(--darkBlue);
+}
+
+.text-light {
+  color: var(--primary);
+}
+
+.text-yellow {
+  color: var(--yellow);
+}
+
+.text-dWhite {
+  color: var(--white);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.stroke-white {
+  stroke: white;
+}
+
+
+
+.navLinks {
+  color: #ffffff;
+  font-family: var(--gilM);
+}
+
+.navLinks:hover {
+  color: var(--orange);
+}
+
+
+
+.orange {
+  background-color: var(--orange);
+}
+
+.yellow {
+  background-color: var(--yellow);
+}
+
+.darkBlue {
+  background-color: var(--darkBlue);
+}
+
+.transBlue {
+  background-color: var(--lightBlue);
+}
+
+.white {
+  background-color: var(--white);
+}
+
+.primary {
+  background-color: var(--primary);
+}
+
+
+
+.gilB {
+  font-family: var(--gilB);
+}
+
+.gilH {
+  font-family: var(--gilH);
+}
+
+.gilLight {
+  font-family: var(--gilLight);
+}
+
+.gilR {
+  font-family: var(--gilR);
+}
+
+.gilM {
+  font-family: var(--gilM);
+}
+
+.karmella {
+  font-family: var(--karmella);
+}
+
+.mergian {
+  font-family: var(--mergian);
+}
