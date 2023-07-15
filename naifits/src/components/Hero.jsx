@@ -1,53 +1,73 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import 'swiper/css';
-import SwiperCore, { Autoplay } from 'swiper';
+import 'swiper/css/effect-fade';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
+import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
 
-import { heroImg1, heroImg2, heroImg3 } from '../assets'
+import { heroData } from '../constants';
+
+import styles, { design } from '../styles';
+
+import { BsArrowDownShort } from "react-icons/bs";
+
 
 const Hero = () => {
-    SwiperCore.use([Autoplay]);
+    const progressCircle = useRef(null);
+    const progressContent = useRef(null);
+    const onAutoplayTimeLeft = (s, time, progress) => {
+      progressCircle.current.style.setProperty('--progress', 1 - progress);
+      progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+    };
+
   return (
-    <Swiper
-    spaceBetween={0}
-    slidesPerView={1}
-    loop={true}
-    autoplay={{
-        delay: 500,
-        disableOnInteraction: false
-    }}
-    modules={[Autoplay]}
-    onSlideChange={() => console.log('slide change')}
-    onSwiper={(swiper) => console.log(swiper)}
-    className={`h-[100vh]`}
-    >
-        <SwiperSlide className='h-full'>
-            <div className="swiper-slide" style={{backgroundImage: `url(${heroImg1})`}}>
-                <h4>CULTURE</h4>
-                <div className="describe"><p>Apparel that complements the Nairovybe</p></div>
-                <button className="heroButton">Explore</button>
-            </div>
-        </SwiperSlide>
+    <>
+      <Swiper
+        effect={'fade'}
+        effectOptions={{
+            fadeEffect: {
+              crossFade: true,
+              speed: 5000,
+            },
+        }}
+        spaceBetween={0}
+        centeredSlides={true}
+        loop={true}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Autoplay, Pagination, EffectFade]}
+        onAutoplayTimeLeft={onAutoplayTimeLeft}
+        className="mySwiper w-full h-[calc(100vh-80px)]"
+      >
 
-        <SwiperSlide className='h-full'>
-            <div className="swiper-slide" style={{backgroundImage: `url(${heroImg2})`}}>
-                <h4>TRENDS</h4>
-                <div className="describe"><p>The New Fashion trends in 2023</p></div>
-                <button className="heroButton">Explore</button>
-            </div>
-        </SwiperSlide>
+        {heroData.map((item, index) => (
+            <SwiperSlide key={index} className='h-[calc(100vh-80px)]'>
+                <div  className={`${styles.flexColCenter} h-full relative`} style={{ backgroundImage: `url(${item.image})` }}>
+                    <h4 className={`${design.heroHead}`}>{item.header}</h4>
+                    <div className="describe">
+                        <p className={`${design.heroSubhead}`}>{item.text}</p>
+                    </div>
+                    <a href="#" className={`${styles.flexEnd} w-10 h-20 explore rounded-full border-slate-50 absolute bottom-10`}><BsArrowDownShort className="text-4xl text-white ico"/></a>
+                </div>
+            </SwiperSlide>
+        ))}
 
-        <SwiperSlide className='h-full'>
-            <div className="swiper-slide" style={{backgroundImage: `url(${heroImg3})`}}>
-                <h4>STYLE</h4>
-                <div className="describe"><p>Blend in with your desired style</p></div>
-                <button className="heroButton">Explore</button>
-            </div>
-        </SwiperSlide>
-    </Swiper>
+        <div className="autoplay-progress" slot="container-end">
+          <svg viewBox="0 0 48 48" ref={progressCircle}>
+            <circle cx="24" cy="24" r="20"></circle>
+          </svg>
+          <span ref={progressContent}></span>
+        </div>
+      </Swiper>
+    </>
   )
 }
 
