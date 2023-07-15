@@ -6,7 +6,7 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
+import { Autoplay, EffectFade } from 'swiper/modules';
 
 import { heroData } from '../constants';
 
@@ -40,10 +40,7 @@ const Hero = () => {
           delay: 5000,
           disableOnInteraction: false,
         }}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Autoplay, Pagination, EffectFade]}
+        modules={[Autoplay, EffectFade]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
         className="mySwiper w-full h-[calc(100vh-80px)]"
       >
@@ -55,7 +52,9 @@ const Hero = () => {
                     <div className="describe">
                         <p className={`${design.heroSubhead}`}>{item.text}</p>
                     </div>
-                    <a href="#" className={`${styles.flexEnd} w-10 h-20 explore rounded-full border-slate-50 absolute bottom-10`}><BsArrowDownShort className="text-4xl text-white ico"/></a>
+                    <a href="#" className={`${styles.flexEnd} w-10 h-20 explore rounded-full border-slate-50 absolute bottom-10`}>
+                        <BsArrowDownShort className="text-4xl text-white ico"/>
+                    </a>
                 </div>
             </SwiperSlide>
         ))}
