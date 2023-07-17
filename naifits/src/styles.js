@@ -9,10 +9,12 @@ const styles = {
     marginY: "my-16 sm:my-6",
 
     icon: "text-2xl stroke-white",
+
+    card: "rounded-lg p-4 flex flex-col justify-between bg-slate-200 h-full w-full",
 };
 
 export const design = {
-    heroHead: "text-[10rem] leading-none text-yellow karmella text-center",
+    heroHead: "text-[8rem] leading-none text-yellow karmella text-center",
     heroSubhead: "mergian text-4xl text-dWhite text-center",
 }
 

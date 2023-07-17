@@ -3,8 +3,6 @@ import React, { useRef, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 
 import { Autoplay, EffectFade } from 'swiper/modules';
 
@@ -30,7 +28,7 @@ const Hero = () => {
         effectOptions={{
             fadeEffect: {
               crossFade: true,
-              speed: 5000,
+              speed: 500,
             },
         }}
         spaceBetween={0}
@@ -53,7 +51,7 @@ const Hero = () => {
                         <p className={`${design.heroSubhead}`}>{item.text}</p>
                     </div>
                     <a href="#" className={`${styles.flexEnd} w-10 h-20 explore rounded-full border-slate-50 absolute bottom-10`}>
-                        <BsArrowDownShort className="text-4xl text-white ico"/>
+                        <BsArrowDownShort className="text-4xl text-white ico smooth"/>
                     </a>
                 </div>
             </SwiperSlide>
@@ -63,7 +61,7 @@ const Hero = () => {
           <svg viewBox="0 0 48 48" ref={progressCircle}>
             <circle cx="24" cy="24" r="20"></circle>
           </svg>
-          <span ref={progressContent}></span>
+          <span ref={progressContent} className='text-white'></span>
         </div>
       </Swiper>
     </>

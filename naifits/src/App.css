@@ -21,6 +21,7 @@
   --lightBlue: #0d132199;
   --yellow: #ffeb33;
   --orange: #c5832b;
+  --smooth: all 0.4s ease;
 }
 
 * {
@@ -31,7 +32,6 @@
   font-family: var(--gilM);
   font-size: 1rem;
   user-select: none;
-  transition: all 0.4s ease;
 }
 
 .text-orange {
@@ -138,6 +138,10 @@
   transform: translateY(8px);
 }
 
+.smooth {
+  transition: var(--smooth);
+}
+
 
 
 .autoplay-progress {
@@ -151,7 +155,6 @@
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  color: var(--swiper-theme-color);
 }
 
 .autoplay-progress svg {
@@ -168,4 +171,40 @@
   stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
   stroke-dasharray: 125.6;
   transform: rotate(-90deg);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 80px !important;
+  height: 40px !important;
+  background-color: transparent;
+  font-size: 1rem !important;
+  border-radius: 50px !important;
+  border: 2px solid var(--darkBlue);
+}
+
+.swiper-button-prev svg,
+.swiper-button-next svg {
+  transition: var(--smooth);
+  z-index: 999;
+}
+
+.swiper-button-prev:hover svg {
+  transform: translateX(-8px);
+  transition: var(--smooth);
+}
+
+.swiper-button-next:hover svg {
+  transform: translateX(8px);
+  transition: var(--smooth);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none ;
+}
+
+.cardImg {
+  background-size: cover;
+  background-position: center center;
 }
