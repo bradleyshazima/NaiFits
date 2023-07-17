@@ -24,6 +24,10 @@
   --smooth: all 0.4s ease;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

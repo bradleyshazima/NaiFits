@@ -50,7 +50,7 @@ const Hero = () => {
                     <div className="describe">
                         <p className={`${design.heroSubhead}`}>{item.text}</p>
                     </div>
-                    <a href="#" className={`${styles.flexEnd} w-10 h-20 explore rounded-full border-slate-50 absolute bottom-10`}>
+                    <a href="#trending" className={`${styles.flexEnd} w-10 h-20 explore rounded-full border-slate-50 absolute bottom-10`}>
                         <BsArrowDownShort className="text-4xl text-white ico smooth"/>
                     </a>
                 </div>
