@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import styles from '../styles';
+
 import { productsData } from '../constants';
 
 import 'swiper/css';
@@ -56,7 +57,7 @@ const Trending = () => {
         </Swiper>
 
         <div className='w-full flex flex-col items-center justify-center mt-20'>
-            <Link to='/shop' className='text-white darkBlue px-6 py-3 rounded-full w-64 text-center'>Shop Now</Link>
+            <Link to='/shop' className={`${styles.blueBtn} w-64`}>Shop Now</Link>
         </div>
 
     </section>

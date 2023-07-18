@@ -28,6 +28,13 @@ html {
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar,
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-corner {
+  display: none;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -101,6 +108,15 @@ html {
 
 .primary {
   background-color: var(--primary);
+}
+
+
+.border-dWhite {
+  border: 2px solid var(--white);
+}
+
+.border-dark {
+  border: 2px solid var(--darkBlue);
 }
 
 

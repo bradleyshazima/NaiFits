@@ -1,11 +1,12 @@
 import React from 'react'
-import { Hero, Trending } from '../components'
+import { Blog, Hero, Trending } from '../components'
 
 const Home = () => {
   return (
     <main>
       <Hero />
       <Trending />
+      <Blog />
     </main>
   )
 }
