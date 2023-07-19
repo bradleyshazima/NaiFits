@@ -17,6 +17,8 @@ const styles = {
     whiteBtn: "rounded-full text-dark white py-3 px-6 text-center flex items-center justify-center",
     blueTransBtn: "rounded-full text-dark border-dark py-3 px-6 text-center flex items-center justify-center",
     whiteTransBtn: "rounded-full text-dWhite bg-transparent border-dWhite py-3 px-6 text-center flex items-center justify-center",
+
+    link: "navLinks gilR ",
 };
 
 export const design = {

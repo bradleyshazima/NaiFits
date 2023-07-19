@@ -19,7 +19,7 @@ import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
 
 const Trending = () => {
   return (
-    <section className={`p-20`} id='trending'>
+    <section className={`py-20 px-40`} id='trending'>
         <div className={`flex flex-col gap-5 items-center justify-center pb-20`}>
             <h3 className='text-4xl text-dark gilB'>Top 10 Trending</h3>
             <p className='text-xl text-dark gilM'>Find out what's trending around you today</p>

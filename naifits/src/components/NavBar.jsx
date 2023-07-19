@@ -8,7 +8,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const NavBar = () => {
   return (
-    <nav className={`${styles.flexBtwn} w-full darkBlue text-dWhite h-20 px-20`}>
+    <nav className={`${styles.flexBtwn} w-full darkBlue text-dWhite h-20 px-40 z-[999] fixed inset-0`}>
       <img src={whiteLogo} alt="logo" className='h-10 w-auto' />
 
         <ul className={`${styles.flexCenter}`}>

@@ -17,6 +17,7 @@ import blog1 from './blog-1.png';
 import blog2 from './blog-2.png';
 import blog3 from './blog-3.png';
 import abstract from './abstract.svg'
+import abstract2 from './abstract-2.svg'
 
 export {
     blueLogo,
@@ -38,4 +39,5 @@ export {
     blog2,
     blog3,
     abstract,
+    abstract2,
 };

@@ -40,22 +40,23 @@ const Hero = () => {
         }}
         modules={[Autoplay, EffectFade]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
-        className="mySwiper w-full h-[calc(100vh-80px)]"
+        className="mySwiper w-full h-[calc(100vh-80px)] relative mt-20"
       >
 
         {heroData.map((item, index) => (
             <SwiperSlide key={index} className='h-[calc(100vh-80px)]'>
-                <div  className={`${styles.flexColCenter} h-full relative`} style={{ backgroundImage: `url(${item.image})` }}>
+                <div  className={`${styles.flexColCenter} h-full`} style={{ backgroundImage: `url(${item.image})` }}>
                     <h4 className={`${design.heroHead}`}>{item.header}</h4>
                     <div className="describe">
                         <p className={`${design.heroSubhead}`}>{item.text}</p>
                     </div>
-                    <a href="#trending" className={`${styles.flexEnd} w-10 h-20 explore rounded-full border-slate-50 absolute bottom-10`}>
-                        <BsArrowDownShort className="text-4xl text-white ico smooth"/>
-                    </a>
                 </div>
             </SwiperSlide>
         ))}
+
+        <a href="#trending" className={`${styles.flexEnd} w-10 h-20 explore rounded-full border-slate-50 absolute bottom-10 z-10 inset-x-1/2`}>
+            <BsArrowDownShort className="text-4xl text-white ico float"/>
+        </a>
 
         <div className="autoplay-progress" slot="container-end">
           <svg viewBox="0 0 48 48" ref={progressCircle}>

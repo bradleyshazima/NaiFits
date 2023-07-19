@@ -8,7 +8,7 @@ import { blog1, blog2, blog3, abstract } from '../assets'
 
 const Blog = () => {
   return (
-    <section className='py-10 px-20 flex flex-wrap gap-10 items-center justify-between'>
+    <section className='py-10 px-40 flex flex-wrap gap-10 items-center justify-between'>
       <div className='w-[calc(50%-20px)] h-96 flex flex-col items-start justify-end p-8 rounded-2xl bg-cover bg-center' style={{ backgroundImage: `linear-gradient(to top, rgba(13, 19, 33, 0.9) 10%, rgba(13, 19, 33, 0) 40%), url(${blog1})` }}>
         <h3 className='text-3xl gilB text-dWhite'>New Release</h3>
         <p className='text-dWhite text-lg'>Presenting new trends of 2023</p>

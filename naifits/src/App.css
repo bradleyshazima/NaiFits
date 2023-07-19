@@ -22,6 +22,7 @@
   --yellow: #ffeb33;
   --orange: #c5832b;
   --smooth: all 0.4s ease;
+  --smooth-sm: all 0.2s ease;
 }
 
 html {
@@ -76,12 +77,28 @@ html {
 
 
 .navLinks {
-  color: #ffffff;
+  color: var(--primary);
   font-family: var(--gilM);
 }
 
 .navLinks:hover {
   color: var(--orange);
+}
+
+.text-field {
+  height: 100%;
+  background-color: var(--primary);
+  color: var(--darkBlue);
+  font-family: var(--gilM);
+  display: flex;
+  padding: 0 32px;
+  font-size: 20px;
+  outline: none;
+  border: none;
+}
+
+.text-field::placeholder {
+  color: var(--darkBlue);
 }
 
 
@@ -115,8 +132,16 @@ html {
   border: 2px solid var(--white);
 }
 
+.thin-dWhite {
+  border: 1px solid var(--white);
+}
+
 .border-dark {
   border: 2px solid var(--darkBlue);
+}
+
+.thin-dark {
+  border: 1px solid var(--darkBlue);
 }
 
 
@@ -205,18 +230,12 @@ html {
 
 .swiper-button-prev svg,
 .swiper-button-next svg {
-  transition: var(--smooth);
   z-index: 999;
+  animation: floatX 2s infinite;
 }
 
-.swiper-button-prev:hover svg {
-  transform: translateX(-8px);
-  transition: var(--smooth);
-}
-
-.swiper-button-next:hover svg {
-  transform: translateX(8px);
-  transition: var(--smooth);
+.swiper-button-disabled svg {
+  animation: none;
 }
 
 .swiper-button-prev::after,
@@ -227,4 +246,60 @@ html {
 .cardImg {
   background-size: cover;
   background-position: center center;
+}
+
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(4px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes floatX {
+  0%, 100% {
+    transform: translateX(4px);
+  }
+  50% {
+    transform: translateX(-4px);
+  }
+}
+
+.float {
+  animation: float 2s ease infinite;
+}
+
+.float-x {
+  animation: floatX 2s ease infinite;
+}
+
+
+
+.fancyBtn {
+  cursor: pointer;
+  position: relative;
+  background-color: var(--white);
+  isolation: isolate;
+}
+
+.fancyBtn::before {
+  content: "";
+  position: absolute;
+  background-color: var(--orange);
+  top: 0;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  transition: right 0.2s ease;
+  z-index: -1;
+}
+
+.fancyBtn:hover::before {
+  right: 0;
+}
+
+.btThin {
+  border-top: 1px solid var(--primary);
 }

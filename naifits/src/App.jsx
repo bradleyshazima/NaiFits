@@ -6,7 +6,7 @@ import { Route, Link, Routes} from 'react-router-dom'
 
 import { About, Shop, Home } from './pages'
 
-import { NavBar } from './components'
+import { NavBar, Footer } from './components'
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
         <Route path='/shop' element={<Shop />} />
         <Route path='/aboutus' element={<About />} />
       </Routes>
+      <Footer />
     </section>
   )
 }
