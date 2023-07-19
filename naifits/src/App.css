@@ -218,24 +218,37 @@ html {
   transform: rotate(-90deg);
 }
 
+.swiper {
+  overflow-y: visible !important;
+}
+
 .swiper-button-prev,
 .swiper-button-next {
-  width: 80px !important;
-  height: 40px !important;
+  width: 48px !important;
+  height: 48px !important;
   background-color: transparent;
-  font-size: 1rem !important;
   border-radius: 50px !important;
   border: 2px solid var(--darkBlue);
+  top: -56px !important;
+}
+
+.swiper-button-prev {
+  left: unset !important;
+  right: 72px !important;
 }
 
 .swiper-button-prev svg,
 .swiper-button-next svg {
-  z-index: 999;
-  animation: floatX 2s infinite;
+  z-index: 10;
+  height: 28px !important;
 }
 
-.swiper-button-disabled svg {
-  animation: none;
+.swiper-button-prev svg {
+  transform: translateX(-2px);
+}
+
+.swiper-button-next svg {
+  transform: translateX(2px);
 }
 
 .swiper-button-prev::after,
@@ -302,4 +315,12 @@ html {
 
 .btThin {
   border-top: 1px solid var(--primary);
+}
+
+
+
+.center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }

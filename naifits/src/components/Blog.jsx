@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom'
 
 import { blog1, blog2, blog3, abstract } from '../assets'
 
+import { LuPlay } from "react-icons/lu";
+
 const Blog = () => {
   return (
     <section className='py-10 px-40 flex flex-wrap gap-10 items-center justify-between'>
@@ -14,14 +16,14 @@ const Blog = () => {
         <p className='text-dWhite text-lg'>Presenting new trends of 2023</p>
         <span className='flex gap-8 mt-5'>
           <Link to='#' className={`${styles.whiteBtn}`}>2023 Lookbook</Link>
-          <Link to='#' className={`${styles.whiteTransBtn}`}>Watch Trending</Link>
+          <Link to='#' className={`${styles.whiteTransBtn}`}><LuPlay /> Watch Trending</Link>
         </span>
       </div>
 
       <div className='w-[calc(50%-20px)] h-96 flex flex-col items-center justify-center gap-10'>
         <div className='w-full h-1/2 bg-slate-500 flex p-3 rounded-2xl' style={{ backgroundImage: `url(${blog2})` }}>
           <div className='w-full h-full border-dWhite rounded-lg bg-transparent flex flex-col items-start justify-end p-4'>
-            <Link to='#' className={`${styles.whiteTransBtn}`}>Watch Trending</Link>
+            <Link to='#' className={`${styles.whiteTransBtn}`}><LuPlay /> Watch Trending</Link>
             <h3 className='text-3xl gilB text-dWhite'>Trendy Fashion</h3>
             <p className='text-dWhite text-lg'>New in town</p>
           </div>

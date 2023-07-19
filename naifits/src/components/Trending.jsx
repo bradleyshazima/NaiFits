@@ -13,7 +13,7 @@ import 'swiper/css/navigation';
 
 import { Navigation } from 'swiper/modules';
 
-import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 
 
@@ -34,8 +34,8 @@ const Trending = () => {
             modules={[Navigation]}
             className="mySwiper h-[30rem]"
         >
-            <div className="swiper-button-next"><BsArrowRightShort className='text-dark text-sm' /></div>
-            <div className="swiper-button-prev"><BsArrowLeftShort className='text-dark text-sm' /></div>
+            <div className="swiper-button-next"><FiChevronRight className='text-dark text-sm' /></div>
+            <div className="swiper-button-prev"><FiChevronLeft className='text-dark text-sm' /></div>
 
             {productsData.map((product, index) => (
                 <SwiperSlide key={index}>
