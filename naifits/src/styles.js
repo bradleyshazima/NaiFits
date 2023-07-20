@@ -12,11 +12,11 @@ const styles = {
 
     card: "rounded-lg p-4 flex flex-col justify-between bg-slate-200 h-full w-full",
 
-    blueBtn: "rounded-full text-dWhite darkBlue py-3 px-6 text-center flex items-center justify-center",
-    whiteBtn: "rounded-full text-dark white py-3 px-6 text-center flex items-center justify-center",
-    whiteBtn: "rounded-full text-dark white py-3 px-6 text-center flex items-center justify-center",
-    blueTransBtn: "rounded-full text-dark border-dark py-3 px-6 text-center flex items-center justify-center",
-    whiteTransBtn: "rounded-full text-dWhite bg-transparent border-dWhite py-3 px-6 text-center flex items-center justify-center",
+    blueBtn: "rounded-full text-dWhite darkBlue py-3 px-6 text-center flex items-center justify-center max-w-[240px] w-fit",
+    whiteBtn: "rounded-full text-dark white py-3 px-6 text-center flex items-center justify-center max-w-[240px] w-fit",
+    whiteBtn: "rounded-full text-dark white py-3 px-6 text-center flex items-center justify-center max-w-[240px] w-fit",
+    blueTransBtn: "rounded-full text-dark border-dark py-3 px-6 text-center flex items-center justify-center max-w-[240px] w-fit",
+    whiteTransBtn: "rounded-full text-dWhite bg-transparent border-dWhite py-3 px-6 text-center flex items-center justify-center max-w-[240px] w-fit",
 
     link: "navLinks gilR ",
 };

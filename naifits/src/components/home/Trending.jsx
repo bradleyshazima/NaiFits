@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import styles from '../styles';
+import styles from '../../styles';
 
-import { productsData } from '../constants';
+import { productsData } from '../../constants';
 
 import 'swiper/css';
 import 'swiper/css/navigation';

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from '../styles';
+import styles from '../../styles';
 
 import { HiTruck } from "react-icons/hi";
 import { VscWorkspaceTrusted } from "react-icons/vsc";

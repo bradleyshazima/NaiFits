@@ -8,9 +8,9 @@ import { Link } from 'react-router-dom'
 
 import { Autoplay, EffectFade } from 'swiper/modules';
 
-import { heroData } from '../constants';
+import { heroData } from '../../constants';
 
-import styles, { design } from '../styles';
+import styles, { design } from '../../styles';
 
 import { BsArrowDownShort } from "react-icons/bs";
 

@@ -1,10 +1,10 @@
 import React from 'react'
 
-import styles from '../styles'
+import styles from '../../styles'
 
 import { Link } from 'react-router-dom'
 
-import { blog1, blog2, blog3, abstract } from '../assets'
+import { blog1, blog2, blog3, abstract } from '../../assets'
 
 import { LuPlay } from "react-icons/lu";
 

@@ -19,6 +19,8 @@ import blog3 from './blog-3.png';
 import abstract from './abstract.svg'
 import abstract2 from './abstract-2.svg'
 
+import ShopHeroImg from './ShopHeroImg.jpg'
+
 export {
     blueLogo,
     whiteLogo,
@@ -40,4 +42,6 @@ export {
     blog3,
     abstract,
     abstract2,
+
+    ShopHeroImg,
 };
