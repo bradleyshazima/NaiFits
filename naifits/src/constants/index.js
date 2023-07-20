@@ -2,6 +2,9 @@ import { heroImg1, heroImg2, heroImg3, } from '../assets'
 
 import { bHatBlue, cargoGreen, chestBag, dressRed, palazo, redWhiteT, sweaterGreen, jeansBlack } from '../assets'
 
+
+
+
 export const heroData = [
     {
         header: "CULTURE",
@@ -117,3 +120,21 @@ export const productsData = [
         gender: "Female",
     },
 ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

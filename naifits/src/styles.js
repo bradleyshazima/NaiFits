@@ -1,6 +1,6 @@
 const styles = {
     flexBtwn: "flex justify-between items-center",
-    flexCenter: "flex justify-center items-center gap-10",
+    flexCenter: "flex justify-center items-center",
     flexColCenter: "flex flex-col justify-center items-center gap-10",
     flexStart: "flex justify-start items-center",
     flexEnd: "flex justify-end items-center",

@@ -18,6 +18,7 @@
   --white: #eff1f3;
   --primary: #eff1f380;
   --darkBlue: #0d1321;
+  --grey: #9aa0ac;
   --lightBlue: #0d132199;
   --yellow: #ffeb33;
   --orange: #c5832b;
@@ -226,9 +227,8 @@ html {
 .swiper-button-next {
   width: 48px !important;
   height: 48px !important;
-  background-color: transparent;
+  background-color: var(--grey);
   border-radius: 50px !important;
-  border: 2px solid var(--darkBlue);
   top: -56px !important;
 }
 

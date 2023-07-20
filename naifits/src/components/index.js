@@ -5,6 +5,7 @@ import Blog from "./Blog";
 import Quote from "./Quote";
 import Footer from "./Footer";
 import Email from "./Email";
+import Features from "./Features";
 
 export {
     NavBar,
@@ -14,4 +15,5 @@ export {
     Quote,
     Footer,
     Email,
+    Features,
 };
