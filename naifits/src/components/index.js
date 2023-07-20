@@ -1,11 +1,11 @@
 import NavBar from "./NavBar";
-import Hero from "./Hero";
-import Trending from "./Trending";
-import Blog from "./Blog";
+import Hero from "./home/Hero";
+import Trending from "./home/Trending";
+import Blog from "./home/Blog";
 import Quote from "./Quote";
 import Footer from "./Footer";
 import Email from "./Email";
-import Features from "./Features";
+import Features from "./home/Features";
 
 export {
     NavBar,
