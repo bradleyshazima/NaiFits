@@ -120,21 +120,3 @@ export const productsData = [
         gender: "Female",
     },
 ];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
